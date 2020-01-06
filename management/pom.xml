@@ -2,18 +2,18 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>management</artifactId>
   <packaging>jar</packaging>
+  
   <parent>
     <groupId>com.marin.ui</groupId>
     <artifactId>Marin-UI</artifactId>
     <version>1.0.0</version>
   </parent>
   
-  
-  
 	<dependencies>
       	<dependency>
             <groupId>com.marin.ui</groupId>
-        	<artifactId>Common</artifactId>
+        	<artifactId>common</artifactId>
+        	<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

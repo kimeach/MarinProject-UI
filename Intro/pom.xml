@@ -15,7 +15,8 @@
   <dependencies>
   <dependency>
 	  <groupId>com.marin.ui</groupId>
-	  <artifactId>Common</artifactId>
+	  <artifactId>common</artifactId>
+	  <version>1.0.0</version>
   </dependency>
 
   <dependency>
@@ -27,6 +28,12 @@
     <dependency>
 	  <groupId>com.marin.ui</groupId>
 	  <artifactId>management</artifactId>
+  	  <version>1.0.0</version>
+  </dependency>
+  
+  <dependency>
+	  <groupId>com.marin.ui</groupId>
+	  <artifactId>Login</artifactId>
   	  <version>1.0.0</version>
   </dependency>
   

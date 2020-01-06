@@ -11,6 +11,6 @@ public class IntroController {
 
 	@GetMapping
 	public ModelAndView getIntro() {
-		return new ModelAndView("introTest");
+		return new ModelAndView("baseTemplate");
 	}
 }

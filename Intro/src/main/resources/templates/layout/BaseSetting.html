@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ 
+<head th:fragment="head">
+	<meta charset="utf-8">
+	<link rel="stylesheet" th:href="@{//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css}">
+	<link th:href="@{https://fonts.googleapis.com/css?family=Titillium+Web&display=swap}" rel="stylesheet">	
+	<link th:href="@{base.css}"  rel="stylesheet" type="text/css">	
+	<style type="text/css">
+	
+	</style>
+</head>
+
+
+
+	<th:block th:fragment="script">
+		<script src='//unpkg.com/jquery@3/dist/jquery.min.js'></script>
+		<script src='//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js'></script>
+	</th:block>
+	
+	
+</html>

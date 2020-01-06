@@ -16,7 +16,8 @@
 	<dependencies>
 		<dependency>
 	    	<groupId>com.marin.ui</groupId>
-	    	<artifactId>Common</artifactId>
+	    	<artifactId>common</artifactId>
+	    	<version>1.0.0</version>
 	 	</dependency>
 	</dependencies>
 </project>
