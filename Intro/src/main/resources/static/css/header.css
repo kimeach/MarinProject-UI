@@ -95,7 +95,9 @@ width:80%;
 	padding-left:80%;
 	}
  }
-  @media ( max-width: 500px ) {
+	
+
+ @media (min-width: 300px) and (max-width: 500px) {
 	#header-menu{
 		padding-left:0;
 		text-align: center;
