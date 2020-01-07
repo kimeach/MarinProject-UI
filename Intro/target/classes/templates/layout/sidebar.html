@@ -7,33 +7,53 @@
 <title>Insert title here</title>
 </head>
 	<div th:fragment="sidebar">
-	
-	<div class="row" style="margin-top:34%">
+		<div id="side_menu">
+		<div id="menuBtn">LOGO</div>
+		</div>
+		<div id="side_menu_sub">
+		
+		</div>
+		
+<!-- 	<div class="row" style="margin-top:34%">
 	  <div class="col-12">
 	    <div class="list-group" id="list-tab" role="tablist">
 	      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-	      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-	      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-	    
 	    </div>
 	  </div>
-	</div>
+	</div> -->
+	<th:block layout:fragment="css">
+	<style>
+	#menuBtn{
+	color:white;
+	}
+	#side_menu{
+	width:30%;
+	height:100%;
+	/* background-color: #0059ab; */
+	background-color: #fafafa;
+	border-right : 1px solid #eee;
+	float: left;
+	}
+	#side_menu_sub{
+	width:70%;
+	height:100%;
+	/* background-color: #004c92; */
+	background-color: rgba(20,20,20,0.5);
+	border-right : 1px solid rgba(10,10,10,0.5);
 	
 	
+	float: left;
+	}
+	</style>
+	</th:block>
+	
 	</div>
-	<th:block layout:fragment="script" th:include="layout/BaseSetting:script">
+
+
+	<th:block layout:fragment="script">
+		<th:block th:include="layout/BaseSetting::script">
+		
+		</th:block>
 		
 	</th:block>
 </html>
