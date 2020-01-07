@@ -7,86 +7,57 @@
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+	
 </head>
 <header th:fragment="header" id="header">
+
 <div id="header-menu">
-	<span>info</span> 
-	<span>MyPage</span>
-	<span>Login</span> 
-	<span>siteMap</span>
+	<div style="color:#010101;float:left">
+		<h2 style="font-family: Slovic;">Marin</h2>
+	</div>
+	<div id="header-menu-sub">
+		<span class="header-menu-item">INFO</span> 
+		<span class="header-menu-item">MYPAGE</span>
+		<span class="header-menu-item">LOGIN</span> 
+		<span class="header-menu-item">SITEMAP</span>
+		<span class="header-menu-item">&equiv;</span>
+	</div>	
 </div>
 
 <div id="header-main">
 	<div id="header-title">
-		<div style="color:#010101">
-			<h1 style="font-family: Slovic;">Marin</h1>
-		</div>
+
 		<div style="width:100%;height:20%;text-align: center;margin-top: 5%">
 			<h2 style="font-family: Slovic;">Welcome to the Site</h2>
-			<h5 style="font-family: font-family: 'Barlow', sans-serif;">Over 1 million+ high quality stock images and videos shared by our talented community.</h5>
-			
+					
+  <section class="pen">
+	<h5 class="text">
+	  	<span class="txt-rotate" data-period="2000"
+	     data-rotate='[ "Over 1 million+ high quality stock images and videos shared by our talented community." ]'>
+	 	</span>
+	</h5>
+</section>
+
 		</div>
 	</div>
-	<div style="width:40%;height:50%;margin:0 auto">
-		<input type="text" class="form-control" style="float:left;width:80%" placeholder="search...">
+	<div class="searchCover">
+		<input type="text" class="form-control" id="search-control" placeholder="search...">
 		<div id="searchbtn">Search</div>
 	</div>
 </div>
 <div id="header-sub">
+	<div style="display: inline-block;">best keyword :</div> 
+	  <section class="pen" style="display: inline-block;">
+		<h5 class="text" style="color:white">
+		  	<span class="txt-rotate" data-period="2000"
+		     data-rotate='[ "조혜형","바보","keyword1","keyword2" ]'>
+		 	</span>
+		</h5>
+	</section>
 </div>
 
 <th:block layout:fragment="css">
-<style>
-@font-face{
-font-family: 'Slovic';
-src: url(font/Slovic.ttf) format('truetype');
-}
 
-#header{
- background-image: url( "img/headerImg5.jpg" );
-width:100%;
-height: 100%;
-background-position: center;
-background-size: 100% 100% ;
-}
-#header-title{
-width: 100%;
-height:60%;
-}
-#header-main{
-width:100%;
-height:70%;
-
-}
-
-#header-sub{
-color:white;
-
-width:100%;
-height: 30%;
-background-color: rgba(10,10,10,0.1);
-}
-#searchbtn{
-text-align:center;
-font-weight:bold;
-color:white;
-border-radius : 0 5px 5px 0;
-border:1px solid #ddd;
-background-color:rgba(0,0,0,0.1);
-float:left;
-width:20%;
-padding:6px 12px;
-}
-#header-menu{
-font-weight: bold;
-color:#DC9146;
-width:100%;height: 5%;
-font-family: 'Poppins', sans-serif;
-text-align: right;
-background-color:rgba(255,255,255,0.1);
-position: static;
-}
-</style>
 
 </th:block>
 <th:block layout:fragment="script">

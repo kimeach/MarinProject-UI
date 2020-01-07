@@ -12,8 +12,6 @@ import com.marin.ui.Repository.MarinTemplate;
 @RequestMapping("/intro")
 public class IntroController {
 
-	@Autowired
-	MarinTemplate rest;
 	
 	@GetMapping
 	public ModelAndView getIntro() {
