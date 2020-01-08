@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css">
-
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">	
-<title>Insert title here</title>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:include="layout/BaseSetting::head">
 </head>
-<body>
-<div class="container">
-	<div class="box box-primary" style="width:40%;height: 50%;margin:10% auto">
+<body class="container-fluid">
+	<div th:include="layout/header-menu::header-menu" id="header-menu"></div>
+	<div layout:fragment="content" id="content">
+		
+		<div class="box box-primary" style="width:25%;height: 50%;margin:10% auto;background-color: rgba(255,255,255,0.9);">
 	<div class="box-body">
 		<table  class="table" style="border : 1px solid #ddd;border-radius: 3px;">
 		<colgroup>
@@ -20,7 +19,7 @@
 			<col width="30%"> -->
 		</colgroup>
 			<tr>
-			<td style="text-align: center;font-weight: bold;font-size: 1.5em; font-family: 'Titillium Web', sans-serif;">ANACONDA</td>
+			<td style="text-align: center;font-weight: bold;font-size: 1.5em; font-family: 'Titillium Web', sans-serif;">Login</td>
 			</tr>
 			<tr>
 			
@@ -41,7 +40,7 @@
 			</tr>
 			<tr>
 			<td style="text-align: center;">
-				<button class="btn btn-info btn-lg btn-block" id="loginBtn">로그인</button>
+				<button class="btn btn-lg btn-block" style="background-color: #212529;color : white;" id="loginBtn">로그인</button>
 			</td>
 			</tr>
 			<tr>
@@ -52,23 +51,40 @@
 		</table>
 		</div>
 	</div>
-</div>
+	
+	</div>
+	<div th:include="layout/footer::footer" id="footer"></div>
+	<div th:include="layout/sidebar::sidebar" id="sidebar"></div>
+	<th:block layout:fragment="css">
+		<style type="text/css">
+		
+		
+		</style>
+	</th:block>
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/BaseSetting::script"></th:block>
+	 
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+				$("#etcMenu").click(function() {
+					$('#sidebar').animate({
+				        width: "toggle"
+				    }, 400, "linear");
+				});
+				
+				$('#addBtn').click(function(){
+					alert("클릭");
+				})
+				$('#loginBtn').click(function(){
+					alert("로그인 버튼");
+				})
+
+				$('#signUpBtn').click(function(){
+					alert("회원가입 버튼");
+				})
+				
+			});	
+		</script>
+	</th:block>
 </body>
-<script src='//unpkg.com/jquery@3/dist/jquery.min.js'></script>
-<script src='//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js'></script>
-
-<script type="text/javascript" th:inline="javascript">
-//var list = [[${list}]];
-//console.log("list : "+list)
-$('#addBtn').click(function(){
-	alert("클릭");
-})
-$('#loginBtn').click(function(){
-	alert("로그인 버튼");
-})
-
-$('#signUpBtn').click(function(){
-	alert("회원가입 버튼");
-})
-</script>
-</html>  
+</html>

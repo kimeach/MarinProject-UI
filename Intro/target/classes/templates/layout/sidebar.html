@@ -7,40 +7,38 @@
 <title>Insert title here</title>
 </head>
 	<div th:fragment="sidebar">
-		<div id="side_menu">
+	<!-- 	<div id="side_menu">
 		
-		</div>
-		
-
-	<th:block layout:fragment="css">
-	<style>
-	#menuBtn{
-	color:white;
-	}
-	#side_menu{
-	width:30%;
-	height:100%;
-	/* background-color: #0059ab; */
-	background-color: #fafafa;
-	border-right : 1px solid #eee;
-	float: left;
-	}
-	#side_menu_sub{
-	width:70%;
-	height:100%;
-	/* background-color: #004c92; */
-	background-color: rgba(20,20,20,0.5);
-	border-right : 1px solid rgba(10,10,10,0.5);
-	
-	
-	float: left;
-	}
-	</style>
-	</th:block>
-	
+		</div> -->
+		<th:block layout:fragment="css">
+			<style>
+			#menuBtn{
+				color:white;
+			}
+			#side_menu{
+				width:30%;
+				height:100%;
+				/* background-color: #0059ab; */
+				background-color: #fafafa;
+				border-right : 1px solid #eee;
+				float: left;
+			}
+			#sidebar{
+				width:10%;
+				height: 937px;
+				top : 0;
+				right : 0;
+				bottom : 0;
+				/* margin-left: 85%; */
+				float: right;
+				background-color:rgba(0,0,0,0.8);
+				position: fixed;
+				z-index: 10;
+				display: none;
+				} 
+			</style>
+		</th:block>
 	</div>
-
-
 	<th:block layout:fragment="script">
 		<th:block th:include="layout/BaseSetting::script">
 		

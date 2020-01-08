@@ -8,21 +8,26 @@
 </head>
 <footer th:fragment="footer">
 	<div style="text-align: center;height:100%;">
-		<span class="footer-item">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Author : Kim Gi Moon &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-		<span class="footer-item">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Phone : 010-7657-5746 &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</span>
-		<span class="footer-item">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email : kimeach@naver.com &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</span>
-		<span class="footer-item">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Company : Marin Company &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</span>
+		<span class="footer-item"> Author : Kim Gi Moon </span>
+		<span class="footer-item"> Phone : 010-7657-5746 </span>
+		<span class="footer-item"> Email : kimeach@naver.com </span>
 	</div>
 
 <th:block layout:fragment="css">
 <style>
 .footer-item{
+clear : both;
 color : white;
-vertical-align: middle;
+width : 15%;
+display : inline-block;
 height: 100%;
 }
 @media (min-width: 300px) and (max-width: 500px) {
- 
+ .footer-item{
+width : auto;
+height: 100%;
+display : block;
+}
  
  }
 </style>
