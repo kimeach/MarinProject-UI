@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+	
+</head>
+<header th:fragment="header-menu" >
+	<div style="color:#010101;float:left">
+		<h2 style="font-family: Slovic;">Marin</h2>
+	</div>
+	<div id="header-menu-sub">
+		<span class="header-menu-item">INFO</span> 
+		<span class="header-menu-item">MYPAGE</span>
+		<span class="header-menu-item">LOGIN</span> 
+		<span class="header-menu-item">SITEMAP</span>
+		<span class="header-menu-item">&equiv;</span>
+	</div>	
+<th:block layout:fragment="css">
+
+
+</th:block>
+</header>
+</html>

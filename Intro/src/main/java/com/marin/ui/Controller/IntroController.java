@@ -15,6 +15,11 @@ public class IntroController {
 	
 	@GetMapping
 	public ModelAndView getIntro() {
+		return new ModelAndView("MainIntro");
+	}
+	
+	@GetMapping("/base")
+	public ModelAndView getIntro2() {
 		return new ModelAndView("baseTemplate");
 	}
 }

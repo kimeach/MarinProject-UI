@@ -10,20 +10,6 @@
 	
 </head>
 <header th:fragment="header" id="header">
-
-<div id="header-menu">
-	<div style="color:#010101;float:left">
-		<h2 style="font-family: Slovic;">Marin</h2>
-	</div>
-	<div id="header-menu-sub">
-		<span class="header-menu-item">INFO</span> 
-		<span class="header-menu-item">MYPAGE</span>
-		<span class="header-menu-item">LOGIN</span> 
-		<span class="header-menu-item">SITEMAP</span>
-		<span class="header-menu-item">&equiv;</span>
-	</div>	
-</div>
-
 <div id="header-main">
 	<div id="header-title">
 
@@ -59,27 +45,6 @@
 <th:block layout:fragment="css">
 
 
-</th:block>
-<th:block layout:fragment="script">
-<th:block th:include="layout/BaseSetting::script"></th:block>
-<script type="text/javascript">
-
-var scrolly = window.scrollY;
-//현재 스크롤된값
-var viewPort = window.innerHeight;
-//현재보여지는 viewport 높이
-var totalHeight = document.body.clientHeight;
-//현재문서의 전체높이
-
-$(function(){
-	console.log(getScroll());
-})
-
-function getScroll(){
-return (window.scrollY + window.innerHeight) / document.body.clientHeight * 100;
-}
-
-</script>
 </th:block>
 </header>
 </html>

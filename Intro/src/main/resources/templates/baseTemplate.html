@@ -16,40 +16,29 @@
 			<div id="wrapper">
       <div id="slider-wrap">
           <ul id="slider">
-             <li data-color="#1abc9c">
+             <li>
                 <div>
-                    <h3>Slide #1</h3>
                     <span>Sub-title #1</span>
                 </div>                
-				<img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+				<img th:src="@{img/image1.jpg}">
              </li>
              <li data-color="#3498db">
                 <div>
-                    <h3>Slide #2</h3>
                     <span>Sub-title #2</span>
                 </div>
-				<img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
+                <img th:src="@{img/image2.jpg}">
              </li>
              <li data-color="#9b59b6">
                 <div>
-                    <h3>Slide #3</h3>
                     <span>Sub-title #3</span>
                 </div>
-				<img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
+                <img th:src="@{img/image3.jpg}">
              </li>
              <li data-color="#34495e">
                 <div>
-                    <h3>Slide #4</h3>
                     <span>Sub-title #4</span>
                 </div>
-				<img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
-             </li>
-             <li data-color="#e74c3c">
-                <div>
-                    <h3>Slide #5</h3>
-                    <span>Sub-title #5</span>
-                </div>
-				<img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
+                <img th:src="@{img/image4.jpg}">
              </li>
           </ul>
            <!--controls-->
@@ -62,11 +51,8 @@
           </div>
       </div>
    </div>
-		</div>
-		
+	</div>
 		<div th:include="layout/footer::footer" id="footer"></div>
-	
-	
 	
 	<th:block layout:fragment="css">
 		<style type="text/css">
@@ -232,7 +218,7 @@
 		body{
 		width: 100%;
 		height: 100%;
-		 background-color: rgba(0,0,0,0.9);
+		 background-color: rgb(2,20,30);
 		}
 		.container-fluid{
 		padding : 0;
