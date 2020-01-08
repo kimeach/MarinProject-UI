@@ -5,6 +5,7 @@ body{
 		
 		}
 		#Logo:hover{
+		color: #FFCC00;
 		cursor: pointer;
 		}
 		.container-fluid{
@@ -37,7 +38,8 @@ body{
 		  left:0px; 
   		bottom:0px;
   		z-index:999;
-		background-color: rgba(255,255,255,0.2);
+  		color : #ddd;
+		background-color:rgba(0,0,0,0.8);
 		position: sticky;
 		}
 		

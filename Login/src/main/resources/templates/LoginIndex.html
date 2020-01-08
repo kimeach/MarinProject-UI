@@ -7,25 +7,25 @@
 <body class="container-fluid">
 	<div th:include="layout/header-menu::header-menu" id="header-menu"></div>
 	<div layout:fragment="content" id="content">
-		
-		<div class="box box-primary" style="width:25%;height: 50%;margin:10% auto;background-color: rgba(255,255,255,0.9);">
+		<!-- background-color: rgb(000,51,102,0.3); -->
+		<div class="box box-primary" style="width:25%;height: 50%;margin:10% auto;background-color: rgb(0,0,0,0.5);border-radius: 10px">
 	<div class="box-body">
-		<table  class="table" style="border : 1px solid #ddd;border-radius: 3px;">
+		<table  class="table" >
 		<colgroup>
 			<col width="50%">
 	 		<col width="50%">
-			<!-- 
+			
 			<col width="20%">
-			<col width="30%"> -->
+			<col width="30%">
 		</colgroup>
 			<tr>
-			<td style="text-align: center;font-weight: bold;font-size: 1.5em; font-family: 'Titillium Web', sans-serif;">Login</td>
+			<td id="title-login">LOGIN</td>
 			</tr>
 			<tr>
 			
 				<td>
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">ID</label>
+				    <label id="label-id">ID</label>
 				    <input type="text" class="form-control" id="id" placeholder="Id를 입력해 주세요">
 				  </div>
 				</td>
@@ -33,19 +33,19 @@
 				<tr>
 				<td>
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">PW</label>
+				    <label id="label-pw">Password</label>
 				    <input type="password" class="form-control" id="pw" placeholder="비밀번호를 입력해 주세요">
 				  </div>
 				</td>
 			</tr>
 			<tr>
 			<td style="text-align: center;">
-				<button class="btn btn-lg btn-block" style="background-color: #212529;color : white;" id="loginBtn">로그인</button>
+				<button class="btn btn-lg btn-block" style="background-color: #212529;color : white;font-weight: bold;" id="loginBtn">로그인</button>
 			</td>
 			</tr>
 			<tr>
 				<td style="text-align: center;">
-					<button class="btn btn-primary btn-lg btn-block" id="signUpBtn">회원가입</button>
+					<button class="btn btn-lg btn-block" id="signUpBtn" style="margin-bottom: 1%;background-color: rgba(255,255,255,0.6);font-weight: bold;">회원가입</button>
 				</td>
 			</tr>
 		</table>
@@ -57,14 +57,32 @@
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div>
 	<th:block layout:fragment="css">
 		<style type="text/css">
-		
-		
+		.table td{
+		border-top: none;
+		}
+		#title-login{
+		border-bottom : 2px solid rgb(2,20,30);
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.5em;
+		font-family: 'Titillium Web', sans-serif;
+		color : white;
+		}
+		#label-id,#label-pw{
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.2em;
+		 font-family: 'Titillium Web', sans-serif;
+		color : #ddd;
+		}
+	
 		</style>
 	</th:block>
 	<th:block layout:fragment="script">
 	 <th:block th:include="layout/BaseSetting::script"></th:block>
 	 
 		<script type="text/javascript" th:inline="javascript">
+		
 			$(function(){
 				$("#etcMenu").click(function() {
 					$('#sidebar').animate({

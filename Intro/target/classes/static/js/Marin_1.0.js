@@ -1,6 +1,13 @@
+var company = "/marin/"
+	
 $("#Logo").click(function(){
-	location.href="/marin/intro"
+	location.href= company+"intro";
 })
+
 $('.info').click(function(){
-	alert('클릭')
+	location.href= company+"intro";
+})
+
+$('.login').click(function(){
+	location.href= company+"/login";
 })

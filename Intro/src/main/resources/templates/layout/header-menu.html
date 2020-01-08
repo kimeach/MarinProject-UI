@@ -14,18 +14,20 @@
 		<h2 style="font-family: Slovic;font-size: 2em;margin:0;color:#ccc" id="Logo">MaVin</h2>
 	</div>
 	<div id="header-menu-sub">
-		<span class="header-menu-item" id="info" onclick="javascript:location.href='/intro'">INFO</span> 
-		<span class="header-menu-item" id="mypage">MYPAGE</span>
-		<span class="header-menu-item" id="login">LOGIN</span> 
-		<span class="header-menu-item" id="siteMap">SITEMAP</span>
+		<span class="header-menu-item" id="mypage">PROFILE</span>
+		<span class="header-menu-item" id="siteMap">BLOG</span>
+		<span class="header-menu-item" id="siteMap">NOTICE</span>
+		<span class="header-menu-item" id="siteMap">FREE BOARD</span>
+		
 		<span class="header-menu-item" id="setting"> SETTING</span>
+		<span class="header-menu-item" id="login">LOGIN</span> 
 		<span class="header-menu-item" id="etcMenu">&equiv;</span>
 		<!-- <img th:src="@{img/setting-color-icon.png}" style="width:1.3em;height:1.3em;color : white"> -->
 	</div>	
 <th:block layout:fragment="css">
 		<style>
 		#header-menu-sub{
-			margin-left: 60%;
+			margin-left: 40%;
 			height:100%;
 			display: table;
 		}
@@ -35,9 +37,13 @@
 			width:1%;
 		}
 		.header-menu-item:hover{
-			color: red;
+			color: #FFCC00;
 			cursor: pointer;
+			border-top: 3px solid rgba(0,0,0,0.8);
+			border-bottom: 3px solid #ddd;
 		}
+		
+		
 		#header-menu{
 		text-align : center;
 			font-size: 1.2em;
@@ -48,7 +54,9 @@
 			top:0;
 			bottom:0;
 			font-family: 'Poppins', sans-serif;
-			background-color:rgba(255,255,255,0.1);
+			/* background-color:rgba(255,255,255,0.1); */
+			 background-color:rgba(0,0,0,0.8);
+			
 			position: sticky;
 			z-index: 100;
 		}
@@ -60,6 +68,6 @@
 		 }
 		</style>
 
-</th:block>
+
 </header>
 </html>
