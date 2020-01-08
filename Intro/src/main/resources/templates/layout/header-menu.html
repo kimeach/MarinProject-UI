@@ -21,6 +21,8 @@
 		
 		<span class="header-menu-item" id="setting"> SETTING</span>
 		<span class="header-menu-item" id="login">LOGIN</span> 
+		<span class="header-menu-item" id="signUp">Sign Up</span> 
+		
 		<span class="header-menu-item" id="etcMenu">&equiv;</span>
 		<!-- <img th:src="@{img/setting-color-icon.png}" style="width:1.3em;height:1.3em;color : white"> -->
 	</div>	
@@ -46,7 +48,7 @@
 		
 		#header-menu{
 		text-align : center;
-			font-size: 1.2em;
+			font-size: 1em;
 			font-weight: bold;
 			color: #ddd;
 			width:100%;
@@ -59,6 +61,10 @@
 			
 			position: sticky;
 			z-index: 100;
+		}
+		#signUp{
+		border: 1px solid #ddd;
+		border-radius: 50px;
 		}
 		 @media (min-width: 300px) and (max-width: 500px) {
 			 #header-menu-sub{
