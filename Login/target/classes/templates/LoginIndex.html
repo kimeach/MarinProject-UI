@@ -6,9 +6,10 @@
 </head>
 <body class="container-fluid">
 	<div th:include="layout/header-menu::header-menu" id="header-menu"></div>
+	<div th:include="layout/header::header" id="header"></div>
 	<div layout:fragment="content" id="content">
 		<!-- background-color: rgb(000,51,102,0.3); -->
-		<div class="box box-primary" style="width:25%;height: 50%;margin:10% auto;background-color: rgb(0,0,0,0.5);border-radius: 10px">
+		<div class="box box-primary" id="login-cover">
 	<div class="box-body">
 		<table  class="table" >
 		<colgroup>
@@ -22,7 +23,6 @@
 			<td id="title-login">LOGIN</td>
 			</tr>
 			<tr>
-			
 				<td>
 				  <div class="form-group">
 				    <label id="label-id">ID</label>
@@ -57,6 +57,19 @@
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div>
 	<th:block layout:fragment="css">
 		<style type="text/css">
+		#header{
+		height : 300px;
+		}
+		#login-cover{
+		background-image: url( "./img/back-image.jpg" );
+		background-position: center;
+		background-size: 100% 100% ;
+		width:25%;
+		height: 50%;
+		margin:10% auto;
+		/* background-color: rgb(255,255,255,0.5); */
+		border-radius: 10px;
+		}
 		.table td{
 		border-top: none;
 		}
@@ -84,6 +97,18 @@
 		<script type="text/javascript" th:inline="javascript">
 		
 			$(function(){
+				var fadeShow = $("#header").fadeShow({
+					correctRatio: true, //화면 자동으로 꽉 채우기 (false 시 속도 느려짐)
+					shuffle: true, //배경화면이 순서대로 나오지 않고 random 
+					speed: 5000, // 속도
+					images: [
+							 'img/back-image.jpg',
+							 'img/image1.jpg',
+							 'img/image2.jpg',
+							 'img/image3.jpg',
+							 'img/image4.jpg']
+				});
+			
 				$("#etcMenu").click(function() {
 					$('#sidebar').animate({
 				        width: "toggle"

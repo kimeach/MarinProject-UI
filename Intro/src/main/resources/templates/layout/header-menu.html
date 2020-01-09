@@ -10,41 +10,66 @@
 	
 </head>
 <header th:fragment="header-menu" >
-	<div style="color:#010101;float:left;margin-left:1%">
-		<h2 style="font-family: Slovic;font-size: 2em;margin:0;color:#ccc" id="Logo">MaVin</h2>
-	</div>
+
 	<div id="header-menu-sub">
-		<span class="header-menu-item" id="mypage">PROFILE</span>
+		<h2 style="font-family: Slovic;font-size: 2em;margin:0;color:#ccc" id="Logo">MaVin</h2>
+		<span class="header-menu-none" id="signUp"></span> 
+		<span class="header-menu-item" id="profile">PROFILE</span>
 		<span class="header-menu-item" id="siteMap">BLOG</span>
 		<span class="header-menu-item" id="siteMap">NOTICE</span>
-		<span class="header-menu-item" id="siteMap">FREE BOARD</span>
-		
+		<span class="header-menu-item" id="siteMap">CALENDAR</span>
 		<span class="header-menu-item" id="setting"> SETTING</span>
-		<span class="header-menu-item" id="login">LOGIN</span> 
-		<span class="header-menu-item" id="signUp">Sign Up</span> 
+		<span class="header-menu-none" id="signUp"></span> 
+		<span class="header-menu-icon" id="login"> <i class="fas fa-sign-in-alt fa-lg"></i></span> 
+		<span class="header-menu-icon" id="signUp">I</span> 
+		<span class="header-menu-icon" id="search" style="padding-right:1%"> <i class="fa fa-search fa-lg"></i></span> 
 		
-		<span class="header-menu-item" id="etcMenu">&equiv;</span>
+		<!-- <span class="header-menu-item2" id="etcMenu2">&equiv;</span> -->
 		<!-- <img th:src="@{img/setting-color-icon.png}" style="width:1.3em;height:1.3em;color : white"> -->
 	</div>	
 <th:block layout:fragment="css">
 		<style>
+		#Logo{
+		margin-right : 20%;
+		display:table-cell;
+		vertical-align: middle;
+		width:10%;
+		height:100%;
+		}
+		#Logo:hover{
+			color: #FFCC00;
+			cursor: pointer;
+		}
 		#header-menu-sub{
-			margin-left: 40%;
 			height:100%;
 			display: table;
+			width:100%;
 		}
 		.header-menu-item{
 			display:table-cell;
 			vertical-align: middle;
-			width:1%;
+			width:8%;
 		}
 		.header-menu-item:hover{
 			color: #FFCC00;
 			cursor: pointer;
 			border-top: 3px solid rgba(0,0,0,0.8);
-			border-bottom: 3px solid #ddd;
+			border-bottom: 3px solid #FFCC00;
 		}
-		
+		.header-menu-icon{
+			display:table-cell;
+			vertical-align: middle;
+			width:2%;
+		}
+		#search:hover,#login:hover{
+			color: #FFCC00;
+			cursor: pointer;
+		}
+		.header-menu-none{
+			display:table-cell;
+			vertical-align: middle;
+			width:8%;
+		}
 		
 		#header-menu{
 		text-align : center;
@@ -52,7 +77,7 @@
 			font-weight: bold;
 			color: #ddd;
 			width:100%;
-			height: 50px;
+			height: 100px;
 			top:0;
 			bottom:0;
 			font-family: 'Poppins', sans-serif;
@@ -62,9 +87,20 @@
 			position: sticky;
 			z-index: 100;
 		}
+		
+		
+		.header-menu-item2{
+			display:table-cell;
+			vertical-align: middle;
+			width:10%;
+		}
+		.header-menu-item2:hover{
+			color: #FFCC00;
+			cursor: pointer;
+			border-top: 3px solid rgba(0,0,0,0.8);
+			border-bottom: 3px solid #ddd;
+		}
 		#signUp{
-		border: 1px solid #ddd;
-		border-radius: 50px;
 		}
 		 @media (min-width: 300px) and (max-width: 500px) {
 			 #header-menu-sub{
