@@ -10,7 +10,7 @@
 	<div layout:fragment="content" id="content">
 		<!-- background-color: rgb(000,51,102,0.3); -->
 		<div class="box box-primary" id="login-cover">
-	<div class="box-body">
+		<div class="box-body">
 		<table  class="table" >
 		<colgroup>
 			<col width="50%">
@@ -60,15 +60,15 @@
 		#header{
 		height : 300px;
 		}
+
 		#login-cover{
-		background-image: url( "./img/back-image.jpg" );
 		background-position: center;
 		background-size: 100% 100% ;
 		width:25%;
 		height: 50%;
-		margin:10% auto;
-		/* background-color: rgb(255,255,255,0.5); */
-		border-radius: 10px;
+		margin:5% auto;
+		position: relative;
+		left: 1000px;
 		}
 		.table td{
 		border-top: none;
@@ -97,17 +97,25 @@
 		<script type="text/javascript" th:inline="javascript">
 		
 			$(function(){
-				var fadeShow = $("#header").fadeShow({
-					correctRatio: true, //화면 자동으로 꽉 채우기 (false 시 속도 느려짐)
-					shuffle: true, //배경화면이 순서대로 나오지 않고 random 
-					speed: 5000, // 속도
-					images: [
-							 'img/back-image.jpg',
-							 'img/image1.jpg',
-							 'img/image2.jpg',
-							 'img/image3.jpg',
-							 'img/image4.jpg']
-				});
+				$('#login-cover').animate({
+					left : '0'
+				},"slow")
+					
+				
+					var fadeShow = $("#header").fadeShow({
+						correctRatio: true, //화면 자동으로 꽉 채우기 (false 시 속도 느려짐)
+						shuffle: false, //배경화면이 순서대로 나오지 않고 random 
+						speed: 5000, // 속도
+						images: [
+								 'img/back-image.jpg',
+								 'img/image1.jpg',
+								 'img/image2.jpg',
+								 'img/image3.jpg',
+								 'img/image4.jpg']
+					});
+				
+				
+
 			
 				$("#etcMenu").click(function() {
 					$('#sidebar').animate({
