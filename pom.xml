@@ -80,5 +80,10 @@
 		<module>User</module>
 		<module>management</module>
 		<module>Login</module>
+		<module>Blog</module>
+		<module>Profile</module>
+		<module>Notice</module>
+		<module>Setting</module>
+		<module>Calendar</module>
 	</modules>
 </project>

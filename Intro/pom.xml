@@ -37,6 +37,36 @@
   	  <version>1.0.0</version>
   </dependency>
   
+  <dependency>
+	  <groupId>com.marin.ui</groupId>
+	  <artifactId>Profile</artifactId>
+  	  <version>1.0.0</version>
+  </dependency>
+  
+    <dependency>
+	  <groupId>com.marin.ui</groupId>
+	  <artifactId>Blog</artifactId>
+  	  <version>1.0.0</version>
+  </dependency>
+  
+    <dependency>
+	  <groupId>com.marin.ui</groupId>
+	  <artifactId>Calendar</artifactId>
+  	  <version>1.0.0</version>
+  </dependency>
+  
+    <dependency>
+	  <groupId>com.marin.ui</groupId>
+	  <artifactId>Notice</artifactId>
+  	  <version>1.0.0</version>
+  </dependency>
+  
+    <dependency>
+	  <groupId>com.marin.ui</groupId>
+	  <artifactId>Setting</artifactId>
+  	  <version>1.0.0</version>
+  </dependency>
+  
   </dependencies>
   
     	<build>

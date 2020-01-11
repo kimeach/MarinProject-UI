@@ -78,21 +78,5 @@ width:80%;
 	
 
  @media (min-width: 300px) and (max-width: 500px) {
-	#header-menu{
-		padding-left:0;
-		text-align: center;
-	}
-	#searchbtn{
-		width:30%;
-		padding:6px 12px;
-	}
-	.searchCover{
-		width:90%;
-		height:50%;
-		margin:0 auto;
-	}
-	#search-control{
-		width:70%;
-	}
 
  }

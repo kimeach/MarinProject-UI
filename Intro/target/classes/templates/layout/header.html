@@ -10,31 +10,64 @@
 	
 </head>
 <header th:fragment="header">
-<!-- 		<div id="header-main">
-		 	<div id="header-title">
+<div class="header-slide-cover">
+<!-- <div class="header-slide" id="header-slide-0"></div>
+<div class="header-slide" id="header-slide-1"></div>
+<div class="header-slide" id="header-slide-2"></div>
+<div class="header-slide" id="header-slide-3"></div> -->
 
-				
-		   
-			</div>
-	 		<div class="searchCover">
-				<input type="text" class="form-control" id="search-control" placeholder="search...">
-				<div id="searchbtn">Search</div>
-			</div>
-		</div> -->
-<!-- 		<div id="header-sub">
-			<div style="display: inline-block;">best keyword :</div> 
-			  <section class="pen" style="display: inline-block;">
-				<h5 class="text" style="color:white">
-				  	<span class="txt-rotate" data-period="2000"
-				     data-rotate='[ "조혜형","바보","keyword1","keyword2" ]'>
-				 	</span>
-				</h5>
-			</section>
-		</div> -->
+		<div class="slideBtn" style="left:46%;"></div>
+		<div class="slideBtn" style="left:48%;"></div>
+		<div class="slideBtn" style="left:50%;"></div>
+		<div class="slideBtn" style="left:52%"></div>
+		<div class="slideBtn" style="left:54%"></div>
+
+</div>
+
 <th:block layout:fragment="css">
-<style>
+	<style>
+.header-slide-cover{
+width:100%;
+height:100%;
+}
+/* .header-slide{
+width:100%;
+height:100%;
+position: absolute;
 
-</style>
+} */
+/* #header-slide-0{
+left : 0;
+background-image: url( "./img/image1.jpg" );
+background-position: center;
+background-size: 100% 100% ;
+}
+
+#header-slide-1{
+left: 1900px;
+display: none;
+background-image: url( "./img/image2.jpg" );
+background-position: center;
+background-size: 100% 100% ;
+}
+
+#header-slide-2{
+left: 1900px;
+display: none;
+background-image: url( "./img/image3.jpg" );
+background-position: center;
+background-size: 100% 100% ;
+}
+
+#header-slide-3{
+left: 1900px;
+display: none;
+background-image: url( "./img/image4.jpg" );
+background-position: center;
+background-size: 100% 100% ;
+} */
+
+	</style>
 </th:block>
 </header>
 </html>
