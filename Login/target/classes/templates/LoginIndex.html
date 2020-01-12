@@ -11,6 +11,7 @@
 		<!-- background-color: rgb(000,51,102,0.3); -->
 		<div id="login-cover">
 		<div class="box-body">
+		<form id="loginForm">
 		<table  class="table" >
 		<colgroup>
 			<col width="50%">
@@ -26,7 +27,7 @@
 				<td>
 				  <div class="form-group">
 				    <label id="label-id">ID</label>
-				    <input type="text" class="form-control" id="id" placeholder="Id를 입력해 주세요">
+				    <input type="text" class="form-control" id="id" name="id" placeholder="Id를 입력해 주세요">
 				  </div>
 				</td>
 				</tr>
@@ -34,7 +35,7 @@
 				<td>
 				  <div class="form-group">
 				    <label id="label-pw">Password</label>
-				    <input type="password" class="form-control" id="pw" placeholder="비밀번호를 입력해 주세요">
+				    <input type="password" class="form-control" id="pw" name="pw" placeholder="비밀번호를 입력해 주세요">
 				  </div>
 				</td>
 			</tr>
@@ -49,6 +50,7 @@
 				</td>
 			</tr>
 		</table>
+		</form>
 		</div>
 	</div>
 	
@@ -102,6 +104,15 @@
 			font-weight: bold;
 			color : white;
 		}
+		
+		@media  (max-width : 1100px){
+			
+		}		
+		@media (min-width: 300px) and (max-width: 500px) {
+			 #login-cover{
+			 width: 80%;
+			 }
+		 }
 		</style>
 	</th:block>
 	<th:block layout:fragment="script">
@@ -123,15 +134,29 @@
 				$('#addBtn').click(function(){
 					alert("클릭");
 				})
-				$('#loginBtn').click(function(){
-					alert("로그인 버튼");
-				})
 
 				$('#signUpBtn').click(function(){
 					alert("회원가입 버튼");
 				})
 				
 			});	
+			
+			$('#loginBtn').click(function(){
+				var form ={};
+				form = $('#loginForm').serializeArray();
+				$.ajax({
+					url : "login",
+					type : "post",
+					data : JSON.stringify(form),
+					contentType:"application/json; charset=UTF-8",
+					success : function(){
+						alert('성공');
+					},
+					error : function(){
+						alert('실패');
+					}
+				})
+			})
 		</script>
 	</th:block>
 </body>

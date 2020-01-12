@@ -156,21 +156,26 @@ $('#login').click(function(){
 })
 
 $('#search').click(function(){
-	if(!$(this).find('input').length){
-		$('#before-none').animate({width:"2%"},"slow")
+	$('.header-menu-search-popup-cover').slideDown("slow");
+	
+	/*if(!$(this).find('input').length){
+		$('.header-menu-icon-cover').animate({'padding-left':'0'},"slow")
 				
-		$(this).animate({width:"10%"},"slow",function(){
-			$(this).html("<input type='text' placeholder='Search...'>" +
+		$(this).animate({width:"70%"},"slow",function(){
+			$(this).html("<input type='text' id='searchText' placeholder='Search...'>" +
 					"&nbsp; <i class='fa fa-search fa-lg'></i>")	
 		})
 	}
 	else{
 		
 		
-	}
+	}*/
 		
 })
+$('#search-popup-cancle-btn').click(function(){
+	$('.header-menu-search-popup-cover').slideUp("slow");
 
+})
 
 $('.header-menu-item').mouseover(function(){
 	$(this).animate({
