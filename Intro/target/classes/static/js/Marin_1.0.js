@@ -1,6 +1,11 @@
 var company = "/marin/"
-	
+	var beforeNo = 0;
+	var afterNo = 0;
+	var thisUrl = document.URL.substr(document.URL.lastIndexOf("/")+1); 
 	$(function(){
+		$("#"+thisUrl).css('border-bottom','3px solid #FFCC00');
+		$("#"+thisUrl).css('color','#FFCC00');
+		
 		var fadeShow = $(".header-slide-cover").fadeShow({
 			correctRatio: true, //화면 자동으로 꽉 채우기 (false 시 속도 느려짐)
 			shuffle: false, //배경화면이 순서대로 나오지 않고 random 
@@ -13,6 +18,10 @@ var company = "/marin/"
 					 'img/image4.jpg']
 		});
 		// slide();
+		var no = 
+		$('.cover').animate({
+			left : '0'
+		},"slow")
 	})
 	
 	
@@ -32,9 +41,6 @@ var company = "/marin/"
 			left : 0
 		},3000)
 		
-		
-	
-		
 	}
 
 	
@@ -43,19 +49,30 @@ $("#Logo").click(function(){
 	
 })
 
-$('#profile').click(function(){
+$('.header-menu-item-cover').click(function(e){
+	console.log('들어옴')
+	var tid = e.target.id
+	console.log("id : "+tid)
+	$("#"+tid).attr('data-no');
+	
 	$('.slideBtn').css('display','none');
 	if($('#header').css('height') === "300px"){
-		window.location.href= company+"profile";
+		console.log('true 들어옴')
+		$('.cover').animate({
+			left: "-100%"
+		},"slow",function(){
+			window.location.href= company+tid;
+		})
 	}
 	else{
 		$('#header').animate({
 			height : '300'
 		},"slow",function(){
-			$('.div-box-cover-top').animate({
+			$('.header-slide-cover').animate({
 				right : 2000
 			},"slow",function(){
-				window.location.href= company+"profile";
+				afterNo = $(this).attr('data-no');
+				window.location.href= company+tid;
 			})
 		})
 	}
@@ -63,78 +80,7 @@ $('#profile').click(function(){
 
 })
 
-$('#blog').click(function(){
-	$('.slideBtn').css('display','none');
-	if($('#header').css('height') === "300px"){
-		window.location.href= company+"blog";
-	}
-	else{
-		$('#header').animate({
-			height : '300'
-		},"slow",function(){
-			$('.div-box-cover-top').animate({
-				right : 2000
-			},"slow",function(){
-				window.location.href= company+"blog";
-			})
-		})
-	}
-})
 
-$('#notice').click(function(){
-	$('.slideBtn').css('display','none');
-	if($('#header').css('height') === "300px"){
-		window.location.href= company+"notice";
-	}
-	else{
-		$('#header').animate({
-			height : '300'
-		},"slow",function(){
-			$('.div-box-cover-top').animate({
-				right : 2000
-			},"slow",function(){
-				window.location.href= company+"login";
-			})
-		})
-	}
-})
-
-
-$('#calendar').click(function(){
-	$('.slideBtn').css('display','none');
-	if($('#header').css('height') === "300px"){
-		window.location.href= company+"calendar";
-	}
-	else{
-		$('#header').animate({
-			height : '300'
-		},"slow",function(){
-			$('.div-box-cover-top').animate({
-				right : 2000
-			},"slow",function(){
-				window.location.href= company+"calendar";
-			})
-		})
-	}
-})
-
-$('#setting').click(function(){
-	$('.slideBtn').css('display','none');
-	if($('#header').css('height') === "300px"){
-		window.location.href= company+"setting";
-	}
-	else{
-		$('#header').animate({
-			height : '300'
-		},"slow",function(){
-			$('.div-box-cover-top').animate({
-				right : 2000
-			},"slow",function(){
-				window.location.href= company+"setting";
-			})
-		})
-	}
-})
 
 $('#login').click(function(){
 	$('.slideBtn').css('display','none');

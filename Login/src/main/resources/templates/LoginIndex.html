@@ -9,51 +9,51 @@
 	<div th:include="layout/header::header" id="header"></div>
 	<div layout:fragment="content" id="content">
 		<!-- background-color: rgb(000,51,102,0.3); -->
-		<div id="login-cover">
-		<div class="box-body">
-		<form id="loginForm">
-		<table  class="table" >
-		<colgroup>
-			<col width="50%">
-	 		<col width="50%">
-			
-			<col width="20%">
-			<col width="30%">
-		</colgroup>
-			<tr>
-			<td id="title-login" >MAVIN</td>
-			</tr>
-			<tr>
-				<td>
-				  <div class="form-group">
-				    <label id="label-id">ID</label>
-				    <input type="text" class="form-control" id="id" name="id" placeholder="Id를 입력해 주세요">
-				  </div>
-				</td>
-				</tr>
-				<tr>
-				<td>
-				  <div class="form-group">
-				    <label id="label-pw">Password</label>
-				    <input type="password" class="form-control" id="pw" name="pw" placeholder="비밀번호를 입력해 주세요">
-				  </div>
-				</td>
-			</tr>
-			<tr>
-			<td style="text-align: center;">
-				<button class="btn btn-lg btn-block" style="background-color: #212529;color : white;font-weight: bold;" id="loginBtn">로그인</button>
-			</td>
-			</tr>
-			<tr>
-				<td style="text-align: center;">
-					<button class="btn btn-lg btn-block" id="signUpBtn">회원가입</button>
-				</td>
-			</tr>
-		</table>
-		</form>
+		<div class="cover">
+			<div class="login-cover">
+				<div class="box-body">
+					<form id="loginForm">
+						<table  class="table" >
+							<colgroup>
+								<col width="50%">
+						 		<col width="50%">
+								<col width="20%">
+								<col width="30%">
+							</colgroup>
+							<tr>
+								<td id="title-login" >MAVIN</td>
+							</tr>
+							<tr>
+								<td>
+								  <div class="form-group">
+								    <label id="label-id">ID</label>
+								    <input type="text" class="form-control" id="id" name="id" placeholder="Id를 입력해 주세요">
+								  </div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								  <div class="form-group">
+								    <label id="label-pw">Password</label>
+								    <input type="password" class="form-control" id="pw" name="pw" placeholder="비밀번호를 입력해 주세요">
+								  </div>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">
+									<button class="btn btn-lg btn-block" style="background-color: #212529;color : white;font-weight: bold;" id="loginBtn">로그인</button>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">
+									<button class="btn btn-lg btn-block" id="signUpBtn">회원가입</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
 		</div>
-	</div>
-	
 	</div>
 	<div th:include="layout/footer::footer" id="footer"></div>
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div>
@@ -65,16 +65,12 @@
 		#content{
 		height : 900px;
 		}
-		#login-cover{
-		background-position: center;
-		background-size: 100% 100% ;
+		.login-cover{
 		background-color : white; /* #AAABA9 */
 		width:25%;
 		border-radius: 5px;
 		height: 53%;
 		margin:10% auto;
-		position: relative;
-		left: 1000px;
 		}
 		.box-body{
 		border-radius: 5px;
@@ -109,7 +105,7 @@
 			
 		}		
 		@media (min-width: 300px) and (max-width: 500px) {
-			 #login-cover{
+			 .cover{
 			 width: 80%;
 			 }
 		 }
@@ -119,17 +115,8 @@
 	 <th:block th:include="layout/BaseSetting::script"></th:block>
 	 
 		<script type="text/javascript" th:inline="javascript">
-		
+		beforeNo = [[${count}]];
 			$(function(){
-				$('#login-cover').animate({
-					left : '0'
-				},"slow")
-			
-				$("#etcMenu").click(function() {
-					$('#sidebar').animate({
-				        width: "toggle"
-				    }, 400, "linear");
-				});
 				
 				$('#addBtn').click(function(){
 					alert("클릭");
