@@ -8,24 +8,231 @@
 	<div th:include="layout/header-menu::header-menu" id="header-menu"></div>
 	<div th:include="layout/header::header" id="header"></div>
 	<div layout:fragment="content" id="content">
-		<div class="cover"></div>
+		
+		<div class="schedule-cover">
+
+		<div class="schedule-table-cover">
+			<div>
+				<button class="btn pull-right">
+					<i class="fa fa-plus"></i>
+					<span>일정 추가</span>
+				</button>
+				<button class="btn">Year</button>
+				<button class="btn">Month</button>
+				<button class="btn">Day</button>
+			</div>
+			<div style="width:100%;text-align: center;padding-top:2%">
+				<h3> 
+					<span onclick="prevMonth()" id="prevBtn"> < </span>
+					<span id="selectMonth" style="margin-right:3%"></span> 
+					<span id="selectYear"></span> 
+					<span onclick="nextMonth()" id="nextBtn"> > </span>
+				</h3>
+			</div>
+			<table class="schedule-table">
+				<tr class="schedule-title">
+					<td class="schedule-title-td" id="sunday" data-start="7">Sun</td>
+					<td class="schedule-title-td" id="monday" data-start="1">Mon</td>
+					<td class="schedule-title-td" id="tuesday" data-start="2">Tue</td>
+					<td class="schedule-title-td" id="wednedsday" data-start="3">Wed</td>
+					<td class="schedule-title-td" id="thursday" data-start="4">Thu</td>
+					<td class="schedule-title-td" id="friday" data-start="5">Fri</td>
+					<td class="schedule-title-td" id="saturday" data-start="6">Sat</td>
+				</tr>
+			</table>
+		</div>
+			<div style="width:2%;float:left">&nbsp;</div>
+
+		</div>
 	</div>
 	<div th:include="layout/footer::footer" id="footer"></div>
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div>
 	<th:block layout:fragment="css">
 		<style type="text/css">
+			.schedule-table{
+			text-align : center;
+			width:100%;
+			height:100%;
+
+			}
+			.schedule-table-cover{
+			width:50%;
+			height:100%;
+			/* float:left; */
+			background-color: rgb(255, 160, 0);
+			color: white;
+			border-radius: 5px;
+			margin : 0 auto;
+			}
 		
+			.schedule-cover{
+			width:96%;
+			height: 700px;
+			margin : 1% 0 0 2%;
+			}
+			
+			.schedule-title{
+			width: 100%;
+			height: 80px;
+			font-weight: bold;
+			/* background-color: rgba(100,110,250,0.7); */
+			
+			}
+			.schedule-title-td{
+			width:14.2%;
+			text-align: center;
+			}
+			.schedule-tr{
+			width:100%;
+			height:100px;
+			}
+			
+			.schedule-td{
+			height : 100px;
+			padding : 0px;
+			margin : 0px;
+			top : 0;
+			}
+			.schedule-td-div{
+			height:100%;
+			}
+		#prevBtn{
+		float:left;margin-left:5%;
+		}
+		#nextBtn{
+		float:right;margin-right:5%;
+		}	
+		#prevBtn , #nextBtn{
+			cursor: pointer;
+		}
+		#schedule-nowDate{
+		background-color : rgba(220,130,90,0.8);
+		padding : 10%;
+		border-radius: 100%;
 		
+		}
 		</style>
 	</th:block>
 	<th:block layout:fragment="script">
 	 <th:block th:include="layout/BaseSetting::script"></th:block>
 	 
 		<script type="text/javascript" th:inline="javascript">
+		// 2000년 1월 1일 은 토요일
+		var constCommonMonth = [31,28,31,30,31,30,31,31,30,31,30,31]; //윤년 X
+		var constLeapMonth = [31,29,31,30,31,30,31,31,30,31,30,31]; //윤년 O
+		
+		var monthVal = ["Jan.","Feb.","Mar.","Apr.","May.","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."];
+		var dayVal = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+		
+		var date = new Date(); //
+		var getYear = date.getUTCFullYear(); //년
+		var getMonth = date.getMonth(); //월
+		var getDate = date.getDate(); //일
+		var getDay = date.getDay() // 요일을 숫자로 나타냄
+		var num = 0;
+		
 			$(function(){
 				
+				var startNum = 0;
+				$('#selectYear').html(getYear);
+				$('#selectMonth').html(monthVal[getMonth]);
 				
+				
+				var query = "<tr class='schedule-tr'>";
+				for(var i = 0;i<42;i++){
+					if(i%7===0 && i != 0){
+						query +="</tr>"
+						query += "<tr class='schedule-tr'>";
+					}
+						query += "<td class='schedule-td' data-role='"+i+"'>"
+									+"<div class='schedule-td-div' style='text-align: center'>"
+										+"<span style='text-align:left;'> </span> "
+									+"</div>"
+								+"</td>"
+				}
+				query +="</tr>"
+				
+				$('.schedule-table').append(query);
+				Calendar(getYear,getMonth);	
+				
+					
 			});	
+			
+			function Calendar(getYear,getMonth){
+				
+				var calDate = new Date(getYear,getMonth,1);
+				var calYear = calDate.getUTCFullYear();
+				var calGetDay = calDate.getDay();
+				var calGetMonth = calDate.getMonth();
+				var calGetDate = calDate.getDate();
+				
+				console.log("calendar 들어옴")
+				console.log("calGetDay : "+calGetDay);
+				console.log("calGetMonth : "+calGetMonth);
+				for(var i = 0;i<$('.schedule-td').length;i++){
+					if(parseInt(calGetDay) === parseInt($('.schedule-td').eq(i).attr('data-role'))){
+						var countNum =i;
+						if(calYear%4===0){ // 윤년 o
+							for(var j = 1;j<=constLeapMonth[calGetMonth];j++){
+								$('.schedule-td').eq(countNum++).html(j);
+							}
+						}
+						else{ // 윤년 x
+							for(var j = 1;j<=constCommonMonth[calGetMonth];j++){
+								$('.schedule-td').eq(countNum++).html(j);
+							}
+						}
+					}
+				}
+				console.log("selectMonth : "+$('#selectMonth').text())
+				console.log("monthVal : "+monthVal[getMonth]);
+				for(var i = 0;i<$('.schedule-td').length;i++){
+					if(parseInt($('.schedule-td').eq(i).text()) === getDate && monthVal[getMonth] === $('#selectMonth').text()){
+						console.log("조건 true : " +i)
+						$('.schedule-td').eq(i).html("<div id='schedule-nowDate'>"+getDate+"</div>");
+					}
+				}
+			}
+			function prevMonth(){
+				$('.schedule-td').html("")
+				$('#selectYear').html("")
+				if(parseInt(getMonth+num) > 0){
+					$('#selectYear').html(getYear);
+					num--
+					$('#selectMonth').html(monthVal[getMonth+num]);
+					console.log("이전 : "+parseInt(getMonth+num))
+					Calendar(parseInt(getYear),parseInt(getMonth+num));
+				
+				}
+				else if(parseInt(getMonth+num) === 0) {
+					$('#selectYear').html(--getYear);
+					num = 11;
+					num--
+					$('#selectMonth').html(monthVal[getMonth+num]);
+					
+					console.log("이전 : "+parseInt(getMonth+num))
+					Calendar(parseInt(getYear),parseInt(getMonth+num));
+				}
+			}
+			function nextMonth(){
+				$('.schedule-td').html("")
+				$('#selectYear').html("")
+				if(parseInt(getMonth+num) >= 0 && parseInt(getMonth+num) <11){
+					$('#selectYear').html(getYear);
+					num++
+					$('#selectMonth').html(monthVal[getMonth+num]);
+					console.log("다음 : "+parseInt(getMonth+num))
+					Calendar(parseInt(getYear),parseInt(getMonth+num));
+				}
+				else if(parseInt(getMonth+num) >= 11){
+					$('#selectYear').html(++getYear);
+					num = -2;
+					num++
+					$('#selectMonth').html(monthVal[getMonth+num]);
+					console.log("다음 : "+parseInt(getMonth+num))
+					Calendar(parseInt(getYear),parseInt(getMonth+num));
+				}
+			}
 		</script>
 	</th:block>
 </body>
